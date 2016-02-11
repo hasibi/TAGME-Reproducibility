@@ -1,0 +1,527 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.5/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.5/ http://www.mediawiki.org/xml/export-0.5.xsd" version="0.5" xml:lang="ja">
+  <siteinfo>
+    <sitename>Wikipedia</sitename>
+    <base>http://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8</base>
+    <generator>MediaWiki 1.17wmf1</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">メディア</namespace>
+      <namespace key="-1" case="first-letter">特別</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">ノート</namespace>
+      <namespace key="2" case="first-letter">利用者</namespace>
+      <namespace key="3" case="first-letter">利用者‐会話</namespace>
+      <namespace key="4" case="first-letter">Wikipedia</namespace>
+      <namespace key="5" case="first-letter">Wikipedia‐ノート</namespace>
+      <namespace key="6" case="first-letter">ファイル</namespace>
+      <namespace key="7" case="first-letter">ファイル‐ノート</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki‐ノート</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template‐ノート</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help‐ノート</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category‐ノート</namespace>
+      <namespace key="100" case="first-letter">Portal</namespace>
+      <namespace key="101" case="first-letter">Portal‐ノート</namespace>
+      <namespace key="102" case="first-letter">プロジェクト</namespace>
+      <namespace key="103" case="first-letter">プロジェクト‐ノート</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Wikipedia:Sandbox</title>
+    <id>6</id>
+    <redirect />
+    <revision>
+      <id>36654478</id>
+      <timestamp>2011-03-06T16:16:58Z</timestamp>
+      <contributor>
+        <username>Y-dash</username>
+        <id>309126</id>
+      </contributor>
+      <comment>テストは[[Wikipedia:サンドボックス]]でお願いいたします。 / [[Special:Contributions/Kompek|Kompek]] ([[User talk:Kompek|会話]]) による ID:36654304 の版を[[H:RV|取り消し]]</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:サンドボックス]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>SandBox</title>
+    <id>26</id>
+    <redirect />
+    <revision>
+      <id>6986090</id>
+      <timestamp>2006-08-05T23:25:48Z</timestamp>
+      <contributor>
+        <username>Nevylax</username>
+        <id>38464</id>
+      </contributor>
+      <comment>#REDIRECT [[サンドボックス]]</comment>
+      <text xml:space="preserve">#REDIRECT [[サンドボックス]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>HomePage</title>
+    <id>46</id>
+    <redirect />
+    <revision>
+      <id>2168894</id>
+      <timestamp>2005-03-22T13:49:43Z</timestamp>
+      <contributor>
+        <username>Hideyuki</username>
+        <id>9577</id>
+      </contributor>
+      <comment>#REDIRECT [[ホームページ]]</comment>
+      <text xml:space="preserve">#REDIRECT [[ホームページ]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Wikipedia:About</title>
+    <id>51</id>
+    <redirect />
+    <revision>
+      <id>19962101</id>
+      <timestamp>2008-05-31T01:12:46Z</timestamp>
+      <contributor>
+        <username>Kanjy</username>
+        <id>36859</id>
+      </contributor>
+      <minor />
+      <comment>2003-03-06T11:35:13Z Setu さん版 (#REDIRECT [[Wikipedia:ウィキペディアについて]]) に戻す</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:ウィキペディアについて]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Wikipedia:How does one edit a page</title>
+    <id>85</id>
+    <redirect />
+    <revision>
+      <id>13206183</id>
+      <timestamp>2007-06-19T05:06:43Z</timestamp>
+      <contributor>
+        <username>Aotake</username>
+        <id>34929</id>
+      </contributor>
+      <minor />
+      <comment>redirect target</comment>
+      <text xml:space="preserve">#REDIRECT [[Help:ページの編集]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>ワールド・ミュージック</title>
+    <id>113</id>
+    <redirect />
+    <revision>
+      <id>24277249</id>
+      <timestamp>2009-02-07T16:20:20Z</timestamp>
+      <contributor>
+        <username>Point136</username>
+        <id>211299</id>
+      </contributor>
+      <minor />
+      <comment>Bot: リダイレクト構文の修正</comment>
+      <text xml:space="preserve">#REDIRECT [[ワールドミュージック]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>ネマティック相</title>
+    <id>127</id>
+    <redirect />
+    <revision>
+      <id>24277255</id>
+      <timestamp>2009-02-07T16:20:40Z</timestamp>
+      <contributor>
+        <username>Point136</username>
+        <id>211299</id>
+      </contributor>
+      <minor />
+      <comment>Bot: リダイレクト構文の修正</comment>
+      <text xml:space="preserve">#REDIRECT [[ネマティック液晶]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>スメクティック相</title>
+    <id>128</id>
+    <redirect />
+    <revision>
+      <id>2168972</id>
+      <timestamp>2004-01-07T09:45:14Z</timestamp>
+      <contributor>
+        <username>Yas</username>
+        <id>739</id>
+      </contributor>
+      <minor />
+      <comment>#REDIRECT [[液晶]]</comment>
+      <text xml:space="preserve">#REDIRECT [[液晶]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>ミュージシャン一覧 (個人)</title>
+    <id>143</id>
+    <redirect />
+    <revision>
+      <id>35399365</id>
+      <timestamp>2010-12-14T00:40:05Z</timestamp>
+      <contributor>
+        <username>Xqbot</username>
+        <id>273540</id>
+      </contributor>
+      <minor />
+      <comment>ロボットによる: 二重リダイレクト修正 → [[音楽家の一覧]]</comment>
+      <text xml:space="preserve">#転送 [[音楽家の一覧]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>病名</title>
+    <id>176</id>
+    <redirect />
+    <revision>
+      <id>17793766</id>
+      <timestamp>2008-02-04T13:37:54Z</timestamp>
+      <contributor>
+        <username>U3002</username>
+        <id>66126</id>
+      </contributor>
+      <minor />
+      <comment>二重リダイレクト回避</comment>
+      <text xml:space="preserve">#REDIRECT [[病気の別名の一覧]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Wikipedia:Welcome, newcomers</title>
+    <id>216</id>
+    <redirect />
+    <revision>
+      <id>10662242</id>
+      <timestamp>2007-02-15T13:40:22Z</timestamp>
+      <contributor>
+        <username>Cave cattum</username>
+        <id>41235</id>
+      </contributor>
+      <comment>#REDIRECT [[Wikipedia:ウィキペディアへようこそ]]</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:ウィキペディアへようこそ]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>黒人霊歌</title>
+    <id>260</id>
+    <redirect />
+    <revision>
+      <id>22493441</id>
+      <timestamp>2008-10-23T05:59:07Z</timestamp>
+      <contributor>
+        <username>Buzin Satuma Hayato</username>
+        <id>243768</id>
+      </contributor>
+      <minor />
+      <comment>黒人霊歌はスピリチュアル（音楽）だと思う</comment>
+      <text xml:space="preserve">#REDIRECT [[スピリチュアル#スピリチュアル（音楽）]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Wikipedia:漢字やスペルに注意</title>
+    <id>281</id>
+    <redirect />
+    <revision>
+      <id>13451992</id>
+      <timestamp>2007-07-02T14:15:39Z</timestamp>
+      <contributor>
+        <username>Cave cattum</username>
+        <id>41235</id>
+      </contributor>
+      <comment>[[WP:AES|←]][[Wikipedia:記事を執筆する]]へのリダイレクト</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:記事を執筆する]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Wikipedia:他言語の使用は控えめに</title>
+    <id>283</id>
+    <redirect />
+    <revision>
+      <id>15761853</id>
+      <timestamp>2007-10-27T06:12:35Z</timestamp>
+      <contributor>
+        <username>Khhy</username>
+        <id>13490</id>
+      </contributor>
+      <comment>#他言語表記は控えめに</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:素晴らしい記事を書くには#他言語表記は控えめに]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Wikipedia:日本語表記法</title>
+    <id>291</id>
+    <redirect />
+    <revision>
+      <id>12840559</id>
+      <timestamp>2007-05-30T14:59:17Z</timestamp>
+      <contributor>
+        <username>Aotake</username>
+        <id>34929</id>
+      </contributor>
+      <comment>[[Wikipedia:表記ガイド]]へ統合。</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:表記ガイド]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Wikipedia:リダイレクトの使い方</title>
+    <id>308</id>
+    <redirect />
+    <revision>
+      <id>2169127</id>
+      <timestamp>2003-11-30T04:09:10Z</timestamp>
+      <contributor>
+        <ip>219.164.91.166</ip>
+      </contributor>
+      <comment>#REDIRECT [[Wikipedia:リダイレクト]]</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:リダイレクト]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>アルコール飲料</title>
+    <id>318</id>
+    <redirect />
+    <revision>
+      <id>15885863</id>
+      <timestamp>2007-11-02T12:42:36Z</timestamp>
+      <contributor>
+        <username>Balmung0731</username>
+        <id>99201</id>
+      </contributor>
+      <comment>[[酒]]へ統合</comment>
+      <text xml:space="preserve">#REDIRECT [[酒]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>地学</title>
+    <id>321</id>
+    <redirect />
+    <revision>
+      <id>2169138</id>
+      <timestamp>2003-09-26T11:33:29Z</timestamp>
+      <contributor>
+        <ip>133.11.230.18</ip>
+      </contributor>
+      <text xml:space="preserve">#REDIRECT [[地球科学]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Wikipedia:ノートページのレイアウト</title>
+    <id>323</id>
+    <redirect />
+    <revision>
+      <id>36028694</id>
+      <timestamp>2011-01-24T11:38:30Z</timestamp>
+      <contributor>
+        <username>Kurz</username>
+        <id>1601</id>
+      </contributor>
+      <minor />
+      <comment>lk</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:ノートページのガイドライン]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Wikipedia:ページを孤立させない</title>
+    <id>332</id>
+    <redirect />
+    <revision>
+      <id>14492895</id>
+      <timestamp>2007-08-27T16:20:04Z</timestamp>
+      <contributor>
+        <username>Cave cattum</username>
+        <id>41235</id>
+      </contributor>
+      <comment>#REDIRECT [[Wikipedia:記事どうしをつなぐ]]</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:記事どうしをつなぐ]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>明石沢貴士</title>
+    <id>335</id>
+    <redirect />
+    <revision>
+      <id>34308655</id>
+      <timestamp>2010-10-03T18:47:08Z</timestamp>
+      <contributor>
+        <username>EmausBot</username>
+        <id>397108</id>
+      </contributor>
+      <minor />
+      <comment>ロボットによる: 二重リダイレクト修正 → [[プロジェクト:漫画家/日本の漫画家 あ行#.E6.98.8E.E7.9F.B3.E6.B2.A2.E8.B2.B4.E5.A3.AB]]</comment>
+      <text xml:space="preserve">#転送 [[プロジェクト:漫画家/日本の漫画家 あ行#.E6.98.8E.E7.9F.B3.E6.B2.A2.E8.B2.B4.E5.A3.AB]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>ここまひ</title>
+    <id>341</id>
+    <redirect />
+    <revision>
+      <id>34308404</id>
+      <timestamp>2010-10-03T18:16:42Z</timestamp>
+      <contributor>
+        <username>EmausBot</username>
+        <id>397108</id>
+      </contributor>
+      <minor />
+      <comment>ロボットによる: 二重リダイレクト修正 → [[プロジェクト:漫画家/日本の漫画家 か行#.E3.81.93.E3.81.93.E3.81.BE.E3.81.B2]]</comment>
+      <text xml:space="preserve">#転送 [[プロジェクト:漫画家/日本の漫画家 か行#.E3.81.93.E3.81.93.E3.81.BE.E3.81.B2]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>吉冨昭仁</title>
+    <id>354</id>
+    <redirect />
+    <revision>
+      <id>7856042</id>
+      <timestamp>2006-09-23T16:20:44Z</timestamp>
+      <contributor>
+        <username>Mambo95</username>
+        <id>77516</id>
+      </contributor>
+      <comment>[[吉富昭仁]]へのリダイレクト</comment>
+      <text xml:space="preserve">#REDIRECT [[吉富昭仁]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>現在のイベント</title>
+    <id>356</id>
+    <redirect />
+    <revision>
+      <id>12796821</id>
+      <timestamp>2007-05-28T09:42:57Z</timestamp>
+      <contributor>
+        <username>Khhy</username>
+        <id>13490</id>
+      </contributor>
+      <comment>#REDIRECT [[Portal:最近の出来事]]</comment>
+      <text xml:space="preserve">#REDIRECT [[Portal:最近の出来事]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Wikipedia:項目名のつけ方</title>
+    <id>451</id>
+    <redirect />
+    <revision>
+      <id>2169218</id>
+      <timestamp>2003-02-03T20:03:50Z</timestamp>
+      <contributor>
+        <username>Tomos</username>
+        <id>10</id>
+      </contributor>
+      <text xml:space="preserve">#REDIRECT[[Wikipedia:記事名の付け方]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>必要とされている記事</title>
+    <id>456</id>
+    <redirect />
+    <revision>
+      <id>2169223</id>
+      <timestamp>2004-04-16T16:59:03Z</timestamp>
+      <contributor>
+        <username>Listener</username>
+        <id>6379</id>
+      </contributor>
+      <comment>Wikipedia:執筆依頼, double redirect</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:執筆依頼]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>東京を舞台にした漫画作品</title>
+    <id>465</id>
+    <redirect />
+    <revision>
+      <id>39222184</id>
+      <timestamp>2011-09-16T06:55:20Z</timestamp>
+      <contributor>
+        <username>リオネル</username>
+        <id>98816</id>
+      </contributor>
+      <comment>[[東京を舞台にした漫画・アニメ作品]]へ統合</comment>
+      <text xml:space="preserve">#REDIRECT [[東京を舞台にした漫画・アニメ作品]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>必要とされている画像</title>
+    <id>467</id>
+    <redirect />
+    <revision>
+      <id>2169230</id>
+      <timestamp>2004-03-20T05:01:58Z</timestamp>
+      <contributor>
+        <username>Michey.M-test</username>
+        <id>3537</id>
+      </contributor>
+      <minor />
+      <comment>Wikipedia:画像提供依頼</comment>
+      <text xml:space="preserve">#REDIRECT [[Wikipedia:画像提供依頼]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>水縞とおる</title>
+    <id>471</id>
+    <redirect />
+    <revision>
+      <id>34308685</id>
+      <timestamp>2010-10-03T18:50:25Z</timestamp>
+      <contributor>
+        <username>EmausBot</username>
+        <id>397108</id>
+      </contributor>
+      <minor />
+      <comment>ロボットによる: 二重リダイレクト修正 → [[プロジェクト:漫画家/日本の漫画家 ま行#.E6.B0.B4.E7.B8.9E.E3.81.A8.E3.81.8A.E3.82.8B]]</comment>
+      <text xml:space="preserve">#転送 [[プロジェクト:漫画家/日本の漫画家 ま行#.E6.B0.B4.E7.B8.9E.E3.81.A8.E3.81.8A.E3.82.8B]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>恋人は守護霊!?</title>
+    <id>472</id>
+    <redirect />
+    <revision>
+      <id>34308641</id>
+      <timestamp>2010-10-03T18:45:13Z</timestamp>
+      <contributor>
+        <username>EmausBot</username>
+        <id>397108</id>
+      </contributor>
+      <minor />
+      <comment>ロボットによる: 二重リダイレクト修正 → [[プロジェクト:漫画家/日本の漫画家 ま行#.E6.B0.B4.E7.B8.9E.E3.81.A8.E3.81.8A.E3.82.8B]]</comment>
+      <text xml:space="preserve">#転送 [[プロジェクト:漫画家/日本の漫画家 ま行#.E6.B0.B4.E7.B8.9E.E3.81.A8.E3.81.8A.E3.82.8B]]
+
+[[Category:漫画作品 こ|いひとはしゆこれい]]
+[[Category:月刊コミックNORA|こいひとはしゆこれい]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>ユーゴスラビア改名</title>
+    <id>504</id>
+    <redirect />
+    <revision>
+      <id>24277258</id>
+      <timestamp>2009-02-07T16:21:01Z</timestamp>
+      <contributor>
+        <username>Point136</username>
+        <id>211299</id>
+      </contributor>
+      <minor />
+      <comment>Bot: リダイレクト構文の修正</comment>
+      <text xml:space="preserve">#REDIRECT [[ユーゴスラビア]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>あだちつよし</title>
+    <id>519</id>
+    <redirect />
+    <revision>
+      <id>34308384</id>
+      <timestamp>2010-10-03T18:14:37Z</timestamp>
+      <contributor>
+        <username>EmausBot</username>
+        <id>397108</id>
+      </contributor>
+      <minor />
+      <comment>ロボットによる: 二重リダイレクト修正 → [[プロジェクト:漫画家/日本の漫画家 あ行#.E3.81.82.E3.81.A0.E3.81.A1.E3.81.A4.E3.82.88.E3.81.97]]</comment>
+      <text xml:space="preserve">#転送 [[プロジェクト:漫画家/日本の漫画家 あ行#.E3.81.82.E3.81.A0.E3.81.A1.E3.81.A4.E3.82.88.E3.81.97]]</text>
+    </revision>
+  </page>
+</mediawiki>
