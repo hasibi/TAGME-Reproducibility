@@ -1,23 +1,21 @@
 """
 TAGME implementation
 
-@author: Faegheh Hasibi
+@author: Faegheh Hasibi (faegheh.hasibi@idi.ntnu.no)
 """
+
 import argparse
-from datetime import datetime
 import math
-
-from nordlys.tagme import econfig
-from nordlys.tagme.test_coll import read_tagme_queries, read_yerd_queries, read_erd_queries
-from nordlys.groundtruth import config, erd_gt, ysqle_erd_gt
-from nordlys.tagme.query import Mention, Query
-from nordlys.groundtruth import tagme_gt
-from nordlys.retrieval.index_cache import IndexCache
-from nordlys.retrieval.lucene_tools import Lucene
+from nordlys.config import OUTPUT_DIR
+from nordlys.tagme import config
+from nordlys.tagme import test_coll
+from nordlys.tagme.query import Query
+from nordlys.tagme.mention import Mention
+from nordlys.tagme.lucene_tools import Lucene
 
 
-ENTITY_INDEX = IndexCache("/data/wikipedia-indices/20100408-index1")
-ANNOT_INDEX = IndexCache("/data/wikipedia-indices/20100408-index1-annot/", use_ram=True)
+ENTITY_INDEX = Lucene(config.INDEX_PATH)
+ANNOT_INDEX = Lucene(config.INDEX_ANNOT_PATH, use_ram=True)
 
 # ENTITY_INDEX = IndexCache("/data/wikipedia-indices/20120502-index1")
 # ANNOT_INDEX = IndexCache("/data/wikipedia-indices/20120502-index1-annot/", use_ram=True)
@@ -30,17 +28,15 @@ class Tagme(object):
 
     DEBUG = 0
 
-    def __init__(self, query, rho_th, filter=None, sf_source="wiki"):
+    def __init__(self, query, rho_th, sf_source="wiki"):
         self.query = query
         self.rho_th = rho_th
-        self.filter = filter
         self.sf_source = sf_source
 
         # TAMGE params
         self.link_prob_th = 0.001
         self.cmn_th = 0.02
         self.k_th = 0.3
-
 
         self.link_probs = {}
         self.in_links = {}
@@ -55,7 +51,7 @@ class Tagme(object):
         """
         ens = {}
         for ngram in self.query.get_ngrams():
-            mention = Mention(ngram, "wiki")
+            mention = Mention(ngram)
             # performs mention filtering (based on the paper)
             if (len(ngram) == 1) or (ngram.isdigit()) or (mention.wiki_occurrences < 2) or (len(ngram.split()) > 6):
                 continue
@@ -66,7 +62,7 @@ class Tagme(object):
             self.link_probs[ngram] = link_prob
             # Filters entities by cmn threshold 0.001; this was only in TAGME source code and speeds up the process.
             # TAGME source code: it.acubelab.tagme.anchor (lines 279-284)
-            ens[ngram] = mention.get_men_candidate_ens(0.001, filter=self.filter)
+            ens[ngram] = mention.get_men_candidate_ens(0.001)
 
         # filters containment mentions (based on paper)
         candidate_entities = {}
@@ -259,64 +255,44 @@ class Tagme(object):
         return top_k_ens
 
 
-def read_args():
+def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-th", "--threshold", help="score threshold", type=float)
-    parser.add_argument("-qid", help="annotates queries from this qid", type=str)
-    parser.add_argument("-data", help="Data set name", choices=['ysqle', 'ysqle-tagme', 'tagme', 'wiki-annot30', 'wiki-disamb-30','toy'])
-    parser.add_argument("-unf", "--filter", help="Do not perform filtering", action="store_false", default=True)
-    parser.add_argument("-out", help="output file", type=str, default="")
+    parser.add_argument("-th", "--threshold", help="score threshold", type=float, default=0)
+    parser.add_argument("-data", help="Data set name", choices=['y-erd', 'erd-dev', 'wiki-annot30', 'wiki-disamb30'])
     args = parser.parse_args()
-    return args
 
-
-def take_action(args):
-    if args.data == "tagme":
-        queries = read_erd_queries(process=True)
-    elif args.data == "ysqle-tagme":
-        queries = read_yerd_queries(process=True)
+    if args.data == "erd-dev":
+        queries = test_coll.read_erd_queries()
+    elif args.data == "y-erd":
+        queries = test_coll.read_yerd_queries()
     elif args.data == "wiki-annot30":
-        queries = read_tagme_queries(config.WIKI_ANNOT30_SNIPPET, process=True)
-        args.filter = False
+        queries = test_coll.read_tagme_queries(config.WIKI_ANNOT30_SNIPPET)
     elif args.data == "wiki-disamb30":
-        queries = read_tagme_queries(config.WIKI_DISAMB30_SNIPPET, process=True)
-        args.filter = False
+        queries = test_coll.read_tagme_queries(config.WIKI_DISAMB30_SNIPPET)
 
-    out_file_name = args.out
-    if out_file_name == "":
-        filter_str = "filtered" if args.filter else "unfiltered"
-        out_file_name = econfig.EVAL_DIR + "/" + args.data + "_tagme-wiki10_" + str(args.threshold) + "_" + filter_str + ".eval"
+    out_file_name = OUTPUT_DIR + "/" + args.data + "_tagme_wiki10.txt"
     open(out_file_name, "w").close()
     out_file = open(out_file_name, "a")
 
     # process the queries
-    s_t = datetime.now()  # start time
-    total_time = 0.0
-
     for qid, query in sorted(queries.items(), key=lambda item: int(item[0]) if item[0].isdigit() else item[0]):
-        print qid, query
-        tagme = Tagme(Query(qid, query), args.threshold, filter=args.filter)
-        print "parsing ..."
+        print "[" + qid + "]", query
+        tagme = Tagme(Query(qid, query), args.threshold)
+        print "  parsing ..."
         cand_ens = tagme.parse()
-        print "disambiguation ..."
+        print "  disambiguation ..."
         disamb_ens = tagme.disambiguate(cand_ens)
-        print "pruning ..."
+        print "  pruning ..."
         linked_ens = tagme.prune(disamb_ens)
 
         out_str = ""
         for men, (en, score) in linked_ens.iteritems():
             out_str += str(qid) + "\t" + str(score) + "\t" + en + "\t" + men + "\tpage-id" + "\n"
-        print out_str
+        print out_str, "-----------\n"
         out_file.write(out_str)
 
-    e_t = datetime.now()  # end time
-    diff = e_t - s_t
-    total_time += diff.total_seconds()
-    time_log = "Execution time(min):\t" + str(total_time/60) + "\n"
-    time_log += "Avg. time per query:\t" + str(total_time/len(queries))
-    print time_log
     print "output:", out_file_name
 
 
 if __name__ == "__main__":
-    take_action(read_args())
+    main()

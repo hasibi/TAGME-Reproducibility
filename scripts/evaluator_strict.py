@@ -12,7 +12,7 @@ Usage:
 e.g.
     python evaluation_erd.py qrels_sets_ERD-dev.txt ERD-dev_MLMcg-GIF.txt
 
-@author: Faegheh Hasibi
+@author: Faegheh Hasibi (faegheh.hasibi@idi.ntnu.no)
 """
 
 from __future__ import division

@@ -2,6 +2,8 @@
 This script computes evaluation metrics for disambiguation phase.
 Foe each query, if the ground truth entity is found in the results, both Precision and recall are set to 1;
 otherwise to 0.
+
+@author: Faegheh Hasibi (faegheh.hasibi@idi.ntnu.no)
 """
 
 from __future__ import division
@@ -9,7 +11,7 @@ import sys
 from collections import defaultdict
 
 
-class Evaluator(object):
+class EvaluatorDisamb(object):
 
     def __init__(self, qrels, results, null_qrels=None):
         self.qrels_dict = self.__group_by_queries(qrels)
@@ -40,7 +42,6 @@ class Evaluator(object):
         queries_eval = {}
         total_prec, total_rec, total_f = 0, 0, 0
         for qid in set(sorted(self.qrels_dict)):
-            # print qid, "******"
             queries_eval[qid] = eval_query_func(self.qrels_dict[qid], self.results_dict.get(qid, {}))
             total_prec += queries_eval[qid]['prec']
             total_rec += queries_eval[qid]['rec']
@@ -73,10 +74,6 @@ def erd_eval_query(query_qrels, query_results):
     # ----- Query has at least an interpretation set. -----
     # Iterate over qrels to calculate TP and FN
     for qrel_item in query_qrels:
-        # print "qrel_item:", qrel_item
-        # print "query results:", query_results
-        # print find_item(qrel_item, query_results)
-        # print "===================================="
         if find_item(qrel_item, query_results):
             prec += 1
             rec += 1
@@ -100,7 +97,7 @@ def find_item(item_to_find, items_list):
     item_to_find = item_to_find
 
     for item in items_list:
-        if (item[1] == item_to_find[1]):
+        if item[1] == item_to_find[1]:
             is_found = True
     return is_found
 
@@ -128,12 +125,16 @@ def parse_file(file_name, res=False):
 
 def main(args):
     if len(args) < 2:
-        print "\tUsage: [qrel_file] [result_file]"
+        print "\tUsage: <qrel_file> <result_file>"
         exit(0)
+    print "parsing qrel ..."
     qrels, null_qrels = parse_file(args[0])  # here qrel does not contain null entities
+    print "parsing results ..."
     results = parse_file(args[1], res=True)[0]
-    evaluator = Evaluator(qrels, results, null_qrels=null_qrels)
+    print "evaluating ..."
+    evaluator = EvaluatorDisamb(qrels, results, null_qrels=null_qrels)
     evaluator.eval(erd_eval_query)
+
 
 if __name__ == '__main__':
     main(sys.argv[1:])

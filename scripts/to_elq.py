@@ -1,25 +1,28 @@
 """
-Filters tagme results
+Converts the results to ELQ format:
+ - Filters general concept entities (keeps only proper noun entities)
+ - Creates ELQ format file
+
+@author: Faegheh Hasibi (faegheh.hasibi@idi.ntnu.no)
 """
-from collections import defaultdict
+
 import sys
-from nordlys.tagme.econfig import DATA_DIR, ENTITY
+from collections import defaultdict
+from nordlys.config import DATA_DIR
+from nordlys.wikipedia.utils import WikipediaUtils
 
 
 def load_kb():
-    # Freebase and Wiki ids of proper noun entities.
+    """Loads Freebase snapshot of proper noun entities."""
     print "Loading knowledge base snapshot ..."
-    FB_DBP_FILE = DATA_DIR + "/fb_dbp_snapshot.txt"
-    __fb_dbp_file = open(FB_DBP_FILE, "r")
-    global KB_SNP_DBP, KB_SNP_FB
+    __fb_dbp_file = open(DATA_DIR + "/fb_dbp_snapshot.txt", "r")
+    global KB_SNP_DBP
     for line in __fb_dbp_file:
         cols = line.strip().split("\t")
         KB_SNP_DBP.add(cols[1])
-        # KB_SNP_FB.add(cols[0])
     __fb_dbp_file.close()
 
 KB_SNP_DBP = set()
-# KB_SNP_FB = set()
 
 
 def read_file(input_file, score_th):
@@ -34,15 +37,17 @@ def read_file(input_file, score_th):
 
 
 def filter_general_ens(lines):
-    """Returns tab-seperated lines: qid score   en  men fb_id"""
+    """Returns tab-separated lines: qid score   en  men fb_id"""
     filtered_annots = []
     for line in lines:
-        dbp_uri = ENTITY.wiki_uri_to_dbp_uri(line[2])
+        dbp_uri = WikipediaUtils.wiki_uri_to_dbp_uri(line[2])
         if dbp_uri in KB_SNP_DBP:  # check fb is in the KB snapshot
             filtered_annots.append(line)
     return filtered_annots
 
+
 def to_inter_sets(lines):
+    """Groups linked entities and interpretation set."""
     group_by_qid = defaultdict(set)
     for cols in lines:
         group_by_qid[cols[0]].add(cols[2])
@@ -62,7 +67,7 @@ def main(args):
     for qid in sorted(inter_sets.keys()):
         ens = inter_sets[qid]
         out_str += qid + "\t1\t" + "\t".join(ens) + "\n"
-    out_file = args[0][:args[0].rfind(".")] + "_" + str(args[1]) +".erdeval"
+    out_file = args[0][:args[0].rfind(".")] + "_" + str(args[1]) + ".elq"
     open(out_file, "w").write(out_str)
     print "Output file:",  out_file
 

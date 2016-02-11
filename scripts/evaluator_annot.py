@@ -2,6 +2,8 @@
 This script computes Topic metrics for the end-to-end performance.
 Precision and recall are macro-averaged.
 Matching condition: entities should match and mentions should be equal or contained in each other.
+
+@author: Faegheh Hasibi (faegheh.hasibi@idi.ntnu.no)
 """
 
 from __future__ import division
@@ -9,12 +11,8 @@ import sys
 from collections import defaultdict
 
 
-SCORE_TH = 0.2
-
-
-class Evaluator(object):
-
-    def __init__(self, qrels, results, null_qrels=None, score_th=SCORE_TH):
+class EvaluatorAnnot(object):
+    def __init__(self, qrels, results, score_th, null_qrels=None):
         self.qrels_dict = self.__group_by_queries(qrels)
         self.results_dict = self.__group_by_queries(results, res=True, score_th=score_th)
         self.null_qrels = self.__group_by_queries(null_qrels) if null_qrels else None
@@ -74,7 +72,6 @@ class Evaluator(object):
         queries_eval = {}
         total_prec, total_rec, total_f = 0, 0, 0
         for qid in sorted(self.qrels_dict):
-            # print qid, "*********"
             queries_eval[qid] = eval_query_func(self.qrels_dict[qid], self.results_dict.get(qid, {}))
 
             total_prec += queries_eval[qid]['prec']
@@ -110,10 +107,6 @@ def erd_eval_query(query_qrels, query_results):
     # ----- Query has at least an interpretation set. -----
     # Iterate over qrels to calculate TP and FN
     for qrel_item in query_qrels:
-        # print "qrel_item:", qrel_item
-        # print "query results:", query_results
-        # print find_item(qrel_item, query_results)
-        # print "===================================="
         if find_item(qrel_item, query_results):
             tp += 1
         else:
@@ -142,7 +135,6 @@ def find_item(item_to_find, items_list):
     item_to_find = item_to_find
 
     for item in items_list:
-        # print item[1] == item_to_find[1], mention_match(item[0], item_to_find[0])
         if (item[1] == item_to_find[1]) and mention_match(item[0], item_to_find[0]):
             is_found = True
     return is_found
@@ -153,9 +145,7 @@ def mention_match(mention1, mention2):
     Checks if two mentions matches each other.
     Matching condition: One of the mentions is sub-string of the other one.
     """
-    # words1 = set(mention1.split())
-    # words2 = set(mention2.split())
-    match = ((mention1 in mention2) or (mention2 in mention1)) #and ((words1.issubset(words2)) or (words2.issubset(words1)))
+    match = ((mention1 in mention2) or (mention2 in mention1))
     return match
 
 
@@ -182,15 +172,14 @@ def parse_file(file_name, res=False):
 
 def main(args):
     if len(args) < 2:
-        print "\tUsage: [qrel_file] [result_file]"
+        print "\tUsage: <qrel_file> <result_file>"
         exit(0)
     print "parsing qrel ..."
     qrels, null_qrels = parse_file(args[0])  # here qrel does not contain null entities
     print "parsing results ..."
     results = parse_file(args[1], res=True)[0]
     print "evaluating ..."
-    # score_th = 0 if len(args) == 2 else float(args[2])
-    evaluator = Evaluator(qrels, results, null_qrels=null_qrels, score_th=float(args[2]))
+    evaluator = EvaluatorAnnot(qrels, results, float(args[2]), null_qrels=null_qrels)
     evaluator.eval(erd_eval_query)
 
 if __name__ == '__main__':
