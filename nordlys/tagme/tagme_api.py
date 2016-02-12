@@ -72,7 +72,7 @@ class TagmeAPI(object):
 
 
 def main():
-    key = "ABgST34GTQoo89912"  # To be taken from TAGME authors
+    key = "XXX"  # To be taken from TAGME authors
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-data", help="Data set name", choices=['y-erd', 'erd-dev', 'wiki-annot30', 'wiki-disamb30'])
