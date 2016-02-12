@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-# Note:
-#  For all of the experiments we get all linked entities by setting the threshold to 0.
-#  Later, in the evaluation scripts, we filter out the entities below a certain threshold.
+# NOTES:
+#   1. Before running this script, download the `data` folder from `http://hasibi.com/files/res/data.tar.gz`
+#      and put it under the main repository directory (i.e., tagme-rep/data)
+#   2. For all of the experiments we get all linked entities by setting the threshold to 0.
+#      Later, in the evaluation scripts we filter out the entities below a certain threshold.
 
 # ===============
 # Reproducibility
