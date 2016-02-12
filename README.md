@@ -19,7 +19,6 @@ This repository is structured as follows:
 Other resources involved in this project are [data](http://hasibi.com/files/res/data.tar.gz), [qrels](http://hasibi.com/files/res/qrels.tar.gz), and [runs](http://hasibi.com/files/res/runs.tar.gz), which are described below.
 
 **Note:** Before running the code, please read the `setup.md` file and build all the required resources.
- - The TAGME author respones 
 
 
 ## Data
