@@ -6,6 +6,7 @@ which can be directly imported to Mongodb using this command:
 
 @author: Faegheh Hasibi (faegheh.hasibi@idi.ntnu.no)
 """
+import argparse
 
 import os
 import json
@@ -111,66 +112,18 @@ class Merger(object):
         return title_nv.strip()
 
 
-def merge_anchors(basedir, outfile):
-    """Writes all annotations into a single file."""
-    open(outfile, "w").close()
-    out = open(outfile, "a")
-    i = 0
-    for path, dirs, files in os.walk(basedir):
-        for fn in sorted(files):
-            if fn.endswith(".tsv"):
-                with open(os.path.join(path, fn)) as in_file:
-                    out.write(in_file.read())
-            i += 1
-            if i % 100 == 0:
-                print i, "th file is added!"
-                print "file:", os.path.join(path, fn)
-
-
-def count_anchors(anchor_file, out_file):
-    """Counts the number of occurrences anchor-entity pairs"""
-    sf_dict = {}
-    in_file = open(anchor_file)
-    i = 0
-    for line in in_file:
-        i += 1
-        cols = line.strip().split("\t")
-        if (len(cols) < 4) or (cols[2].strip().lower() == ""):
-            continue
-        sf = cols[2].strip().lower()
-        en = cols[3].strip()
-        if sf not in sf_dict:
-            sf_dict[sf] = {}
-        if en not in sf_dict[sf]:
-            sf_dict[sf][en] = 1
-        else:
-            sf_dict[sf][en] += 1
-        if i % 1000000 == 0:
-            print i, "th line processed!"
-
-    out_str = ""
-    for sf, en_counts in sf_dict.iteritems():
-        for en, count in en_counts.iteritems():
-            out_str += sf + "\t" + en + "\t" + str(count) + "\n"
-    out = open(out_file, "w")
-    out.write(out_str)
-    out.close()
-
-
 def main():
-    # Builds anchor file
-    annotations_dir = "/data/wikipedia/annotations-20120502"
-    anchors_file = "/data/wikipedia/preprocessed-20120502/anchors.txt"
-    merge_anchors(annotations_dir, anchors_file)
-    anchors_count_file = "/data/wikipedia/preprocessed-20120502/anchors_count.txt"
-    count_anchors(anchors_file, anchors_count_file)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-anchors", help="Path to anchor file")
+    parser.add_argument("-redirects", help="Path to redirect file")
+    parser.add_argument("-titles", help="Path to page-title file")
+    parser.add_argument("-outputdir", help="Path to output directory")
+    args = parser.parse_args()
+
 
     # Merges titles, redirects, and anchors
-    title_file = "/data/wikipedia/preprocessed-20120502/page-id-titles.txt"
-    redirects_file = "/data/wikipedia/preprocessed-20120502/redirects.txt"
-    out_file = "/data/wikipedia/preprocessed-20120502/sf_dict_mongo.json"
     merger = Merger()
-    merger.merge_all(title_file, redirects_file, anchors_count_file, out_file)
+    merger.merge_all(args.titles, args.redirects, args.anchors, args.outputdir + "/sf_dict_mongo.json")
 
 if __name__ == "__main__":
     main()

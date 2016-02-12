@@ -38,7 +38,7 @@ python -m nordlys.tagme.tagme_api -data erd-dev
 python -m scripts.to_elq output/erd-dev_tagmeAPI.txt 0.1
 python -m scripts.evaluator_strict qrels/qrels_erd-dev.txt output/erd-dev_tagmeAPI_0.1.elq
 
-# TAGME API - Y-ERD (These codes are run on d02)
+# TAGME API - Y-ERD
 python -m nordlys.tagme.tagme_api -data y-erd
 python -m scripts.to_elq output/y-erd_tagmeAPI.txt 0.1
 python -m scripts.evaluator_strict qrels/qrels_y-erd.txt output/y-erd_tagmeAPI_0.1.elq

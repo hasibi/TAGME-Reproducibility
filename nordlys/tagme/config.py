@@ -24,9 +24,8 @@ WIKI_DISAMB30_ANNOTATION = DATA_DIR + "/wiki-disamb30-annotation.txt"
 
 # Surface form dictionaries
 COLLECTION_SURFACEFORMS_WIKI = "surfaceforms_wiki_20100408"
-# COLLECTION_SURFACEFORMS_WIKI = "surfaceforms_wiki_20120502"
 SF_WIKI = SurfaceForms(collection=COLLECTION_SURFACEFORMS_WIKI)
 
 
-INDEX_PATH = "/data/wikipedia-indices/20100408-index1"
-INDEX_ANNOT_PATH = "/data/wikipedia-indices/20100408-index1-annot/"
+INDEX_PATH = "/xxx/20100408-index"
+INDEX_ANNOT_PATH = "/xxx/20100408-index-annot/"

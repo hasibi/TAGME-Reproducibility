@@ -54,7 +54,7 @@ def main():
     parser.add_argument("-output", help="Path to write the annotations (.tsv files)")
     args = parser.parse_args()
 
-    read_files(args.inputdir, args.output)
+    read_files(args.inputdir, args.output + "/page-id-titles.txt")
     print "All page ids are added"
 
 

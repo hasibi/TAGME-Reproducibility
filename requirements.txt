@@ -1,9 +1,5 @@
 requests
-python-igraph
 pymongo>=2.7
-rdflib>=4.1.2
-Flask>=0.10.1
-Flask-RESTful>=0.2.12
 sphinx-bootstrap-theme>=0.4.0
 sphinxcontrib-httpdomain>=1.2.1
 lxml>=2.3.2
