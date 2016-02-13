@@ -15,7 +15,7 @@ TAGME authors' comments
 
 - TAGME paper [1] represents “version 1” of TAGME, while the source code and TAGME API are “version 2”. In the second version, the epsilon value been changed and the value of tau has been decreased.
 
-- TAGME uses wiki page-to-page link records (enwiki-xxx-pagelinks.sql.gz), while our implementation extracts links from the body of the pages (enwiki-xxx-pages-articles.xml.bz2). This affects the computation of relatedness, as the former source contains 20% more links than the latter. (It should be noted that this file is not available for the 2010 and 2012 Wikipedia dumps.) 
+- TAGME uses wiki page-to-page link records (enwiki-xxx-pagelinks.sql.gz), while our implementation extracts links from the body of the pages (enwiki-xxx-pages-articles.xml.bz2). This affects the computation of relatedness, as the former source contains 20% more links than the latter.
 
 - TAGME version 2 uses a list of stop words to create alternative spots and we add them to the list of available spots during pre-processing phase. In other words, when a spot like "president of the united states" is found, 2 spots are created: (i) "president of the united states", and "president united states". Then these two spots are added to the anchor dictionary. However, TAGME does not perform any stop word removal during the parsing phase.
 
