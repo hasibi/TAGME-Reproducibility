@@ -42,8 +42,8 @@ TAGME Author comments
 
 
 
-Comments on our experiments:
-----------------------------
+Comments on our experiments
+---------------------------
 
 - Due to reproducibility purposes, we had to use the closes Wikipedia dump to the original experiments, that is dump from April 2010. The page-to-page link records for this dump is not available any more and therefore we had to extract them from body of Wikipedia pages (enwiki-20100408-pages-articles.xml.bz2)
 - TAGME datasets (Wiki-annot and Wiki-disamb) contains ID of the pages, which have changed over time in Wikipedia. We addressed this issue as follows:
