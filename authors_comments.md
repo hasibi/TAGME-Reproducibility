@@ -2,9 +2,9 @@ Authors' comments
 =================
 
 
-Within our experiments for reproducing the results in [1], only parts of the results were reproducible. 
+In our studty for reproducing the results in [1], only parts of the results were reproducible. 
 Later on, the TAGME authors clarified some of the issues that surfaced in this study.
-We list these comments below, as they will facilitate other efforts on the re-implementation of TAGME.
+We list these comments below, as they facilitate other efforts on the re-implementation of TAGME.
 
 We also mention some notes about our experiments, which clarify our decisions on using specific strategies.
 
