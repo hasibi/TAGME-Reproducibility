@@ -24,7 +24,9 @@ TAGME authors' comments
 -  TAGME performs two extra filtering before the pruning step. 
   * Filtering of mentions that are contained in a longer mention.
   * Filtering base on link probability threshold. In Version 1 this threshold was set to 0.02, but in version 2, it is set to 0.1. The code related to this filtering is line 87 of `TagmeParser.java` in TAGME source code:
-``this.minLinkProb = TagmeConfig.get().getSetting(MODULE).getFloatParam(PARAM_MIN_LP, DEFAULT_MIN_LP);``
+  ```
+  this.minLinkProb = TagmeConfig.get().getSetting(MODULE).getFloatParam(PARAM_MIN_LP, DEFAULT_MIN_LP);
+  ```
 
 ###Evaluation:
 
