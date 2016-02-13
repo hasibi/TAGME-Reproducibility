@@ -8,7 +8,7 @@ We list these comments below, as they facilitate other efforts on the re-impleme
 
 We also mention some notes about our experiments, which clarify our decisions on using specific strategies.
 
-TAGME Author comments
+TAGME authors' comments
 ---------------------
 
 ###Implementation:
