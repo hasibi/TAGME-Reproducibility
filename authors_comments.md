@@ -19,7 +19,7 @@ TAGME authors' comments
 
 - TAGME version 2 uses a list of stop words to create alternative spots and we add them to the list of available spots during pre-processing phase. In other words, when a spot like "president of the united states" is found, 2 spots are created: (i) "president of the united states", and "president united states". Then these two spots are added to the anchor dictionary. However, TAGME does not perform any stop word removal during the parsing phase.
 
-- In TAGME version the parsing method for anchors starting with 'the','a','an' has changed. They ignore those prefixes and use only the remaining part. So version 2 can never find 'the firebrand' but only 'firebrand'. 
+- In TAGME version 2 the parsing method for anchors starting with 'the','a','an' has changed. They ignore those prefixes and use only the remaining part. So version 2 can never find 'the firebrand' but only 'firebrand'. 
  
 -  TAGME performs two extra filtering before the pruning step. 
   * Filtering of mentions that are contained in a longer mention.
