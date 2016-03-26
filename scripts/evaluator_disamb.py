@@ -94,7 +94,6 @@ def find_item(item_to_find, items_list):
     :return boolean
     """
     is_found = False
-    item_to_find = item_to_find
 
     for item in items_list:
         if item[1] == item_to_find[1]:
