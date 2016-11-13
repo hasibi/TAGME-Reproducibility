@@ -5,7 +5,7 @@ This repository contains resources developed within the following paper:
 	F. Hasibi, K. Balog, and S.E. Bratsberg. “On the reproducibility of the TAGME Entity Linking System”,
 	In proceedings of 38th European Conference on Information Retrieval (ECIR ’16), March 2016.
 
-This study is an effort aimed at reproducing the results presented in the TAGME paper [1].
+This study is an effort aimed at reproducing the results presented in the TAGME paper [1]. You can check the [paper](http://hasibi.com/files/ecir2016-tagme.pdf) and [presentation](http://www.slideshare.net/FaeghehHasibi/tagmerep) for detailed information.
 
 We received invaluable comments from the TAGME authors about their system, and we made these notes available [here](authors_comments.md).
 These comments may inform future efforts related to the re-implementation of the TAGME system, as they cannot be found in the original paper.
