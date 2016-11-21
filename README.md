@@ -48,13 +48,23 @@ The run files can be downloaded from [here](http://hasibi.com/files/res/runs.tar
   - **Reproducibility**: The naming convention for these files is *XX_YY.txt*, where XX represents the dataset and YY is the name of the method. For each file, only the first 4 columns are considered for the evaluation, which are: snippet ID, confidence score, Wikipedia URI, and mention.
   - **Generalizability**: These files are named as *XX_YY_ZZ.elq*, where XX is the dataset, YY is the name of the method, and ZZ is the entity linking threshold used for evaluation. The format of these files is similar to the corresponding qrel files.
 
-## Cite
+## Citation
 
-Please cite the following paper if you use our code or data in your work:
+If you use the resources presented in this repository, please cite:
+
 ```
-F. Hasibi, K. Balog, and S.E. Bratsberg. “On the reproducibility of the TAGME Entity Linking System”,
-	In proceedings of 38th European Conference on Information Retrieval (ECIR ’16), March 2016.
+@inproceedings{Hasibi:2016:ORT, 
+   author =    {Hasibi, Faegheh and Balog, Krisztian and Bratsberg, Svein Erik},
+   title =     {On the reproducibility of the TAGME Entity Linking System},
+   booktitle = {roceedings of 38th European Conference on Information Retrieval},
+   series =    {ECIR '16},
+   year =      {2016},
+   pages =     {436--449},
+   publisher = {Springer},
+   DOI =       {http://dx.doi.org/10.1007/978-3-319-30671-1_32}
+} 
 ```
+
 ## Contact
 
 If you have any questions, feel free to contact Faegheh Hasibi at <faegheh.hasibi@idi.ntnu.no>.
