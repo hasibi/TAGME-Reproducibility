@@ -50,7 +50,7 @@ The run files can be downloaded from [here](http://hasibi.com/files/res/runs.tar
 
 ## Cite
 
-Please cite the following paper if you use our code or data in your work
+Please cite the following paper if you use our code or data in your work:
 ```
 F. Hasibi, K. Balog, and S.E. Bratsberg. “On the reproducibility of the TAGME Entity Linking System”,
 	In proceedings of 38th European Conference on Information Retrieval (ECIR ’16), March 2016.
