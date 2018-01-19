@@ -63,5 +63,5 @@ def main():
     merge_anchors(args.inputdir, args.outputdir + "/anchors.txt")
     count_anchors(args.outputdir + "/anchors.txt", args.outputdir + "/anchors_count.txt")
 
-if __name__ == "__name__":
+if __name__ == "__main__":
     main()
