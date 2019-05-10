@@ -67,8 +67,7 @@ If you use the resources presented in this repository, please cite:
 
 ## Contact
 
-If you have any questions, feel free to contact Faegheh Hasibi at <faegheh.hasibi@idi.ntnu.no>.
-
+Should you have any questions, please contact Faegheh Hasibi at <f.hasibi@cs.ru.nl>.
 
 [1] P. Ferragina and U. Scaiella. TAGME: On-the-fly annotation of short text fragments (by Wikipedia entities). In Proceedings of CIKM '10, pages 1625–1628, 2010.
 
